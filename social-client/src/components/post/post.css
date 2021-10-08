@@ -1,0 +1,102 @@
+.post {
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 20px 0;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.24); 
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.24);
+}
+.postTop {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+.postTopLeft {
+    display: flex;
+    align-items: center;
+}
+.postTopLeft > img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+
+}
+.postName {
+    margin-right: 10px;
+}
+
+.postTop .postDate {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.postCenter {
+    width: 100%;
+}
+.postCenter .postCenterImg img {
+    width: 100%;
+    object-fit: cover;
+}
+.postCenterTitle {
+    padding: 0 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.postBottom {
+    padding: 5px 20px;
+}
+.posBottomIcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 390;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.postIcons {
+    display: flex;
+    align-items: center;
+}
+.postIcons img {
+    height: 16px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.postBottomEvent {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #363535;
+}
+.postBottmClick {
+    display: flex;
+    flex: 1;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0;
+}
+.postBottmHr {
+    border: .1px solid #d4d6d9;
+    height: 0;
+    margin: 4px 0;
+}
+.postBottomComment:hover{
+    background-color: #e4e6eb;
+}
+.postBottomShare:hover {
+    background-color: #e4e6eb;
+}
+.postBottomLike:hover {
+    background-color: #e4e6eb;
+}
+.countComment {
+    margin-right: 10px;
+}
+.postBtnIcon {
+    margin-right: 4px;
+}

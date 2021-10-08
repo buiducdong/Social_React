@@ -1,0 +1,98 @@
+.topbarContainer {
+    height: 56px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 0px 0px 0px 0px rgba(0,0,0,0); 
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 0px 0px 0px 0px rgba(0,0,0,0);
+}
+.topbarLeft {
+    display: inline-flex;
+    line-height: 56px;
+    align-items: center;
+    flex-grow: 1;
+}
+.topbarLeft img{
+    height: 45px;
+    width: auto;
+    margin: auto 0;
+}
+.topbarLeft .search {
+    display: flex;
+    align-items: center;
+    background-color: #f0f2f5;
+    border-radius: 50px;
+    padding: 8px 10px;
+    color: #909296;
+    flex: 1;
+}
+.search .iconSearch {
+    font-size: 25px;
+}
+.search input {
+    border: none;
+    width: 100%;
+    background-color: #f0f2f5;
+}
+.search input:focus {
+    outline: none;
+}
+
+.topbarCenter {
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    padding: 0 150px;
+    flex-shrink: inherit;
+}
+
+.topbarCenter .iconTopbar {
+    padding: 8px 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #65676b;
+    font-size: 30px;
+}
+.topbarRight .iconTopright {
+    cursor: pointer;
+    color: black;
+    padding: 8px;
+    background-color: #e4e6eb;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+.topbarCenter .iconHome {
+    color: blue;
+}
+.topbarCenter .iconTopbar:hover {
+    background-color: #f0f2f5;
+}
+.topbarRight {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content:flex-end;
+}
+
+.topbarRight .avatar {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 20px;
+}
+.topbarRight .avatar:hover {
+    background-color: #f0f2f5;
+}
+.topbarRight .avatar .imgavatar {
+    height: 25px;
+    width: 25px;
+}
+.topbarRight .avatar span {
+    margin: 0 8px;
+}

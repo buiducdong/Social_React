@@ -1,0 +1,6 @@
+.homeContainer {
+    --bgcolor: #f0f2f5;
+    display: flex;
+    width: 100%;
+    background-color: var(--bgcolor);
+}

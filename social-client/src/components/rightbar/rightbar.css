@@ -1,0 +1,45 @@
+.rightbar {
+    flex: 1;
+    top: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
+    position: sticky;
+}
+
+.rightbarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.rightbarFriendList {
+
+}
+/* profileRightbar */
+.profileTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 0px 10px;
+}
+.totalFriend {
+    padding: 5px 10px 15px 10px;
+}
+.profileFollowing img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.profileListFriend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.profileFollowing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}

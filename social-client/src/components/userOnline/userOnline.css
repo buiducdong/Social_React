@@ -1,0 +1,32 @@
+.rightbarFriend {
+    display: flex;
+    align-items: center;
+    padding: 7px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.rightbarFriend:hover {
+    background-color: #e4e6eb;
+}
+.rightbarProfile {
+    position: relative;
+    margin-right: 10px;
+    z-index: 1;
+}
+.rightbarProfile img {
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.rightbarOnline {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(3, 155, 3);
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    border: 2px solid white;
+}
