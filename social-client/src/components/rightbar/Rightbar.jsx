@@ -4,8 +4,8 @@ import MoreHoriz from "@mui/icons-material/MoreHoriz"
 import { Users } from "../../myData"
 import UserOnline from "../userOnline/UserOnline"
 export default function RightBar({ profile }) {
-
     const HomeRightbar = () => {
+
         return(
             <>
                 <div className="rightbarHeader">
@@ -26,6 +26,7 @@ export default function RightBar({ profile }) {
     }
 
     const ProfileRightbar = () => {
+        const PFIM = 'http://localhost:3000/assets/';
         return(
             <>
                 <div className="introProfile">
@@ -36,27 +37,27 @@ export default function RightBar({ profile }) {
                     <p className="totalFriend">433k người bạn</p>
                     <div className="profileListFriend">
                         <div className="profileFollowing">
-                            <img src="assets/person/1.jpg" alt="" />
+                            <img src={`${PFIM}person/1.jpg`} alt="" />
                             <p className="profileFollowingName">Tam mao</p>
                         </div>
                         <div className="profileFollowing">
-                            <img src="assets/person/1.jpg" alt="" />
+                            <img src={`${PFIM}person/1.jpg`} alt="" />
                             <p className="profileFollowingName">Tam mao</p>
                         </div>
                         <div className="profileFollowing">
-                            <img src="assets/person/1.jpg" alt="" />
+                            <img src={`${PFIM}person/1.jpg`} alt="" />
                             <p className="profileFollowingName">Tam mao</p>
                         </div>
                         <div className="profileFollowing">
-                            <img src="assets/person/1.jpg" alt="" />
+                            <img src={`${PFIM}person/1.jpg`} alt="" />
                             <p className="profileFollowingName">Tam mao</p>
                         </div>
                         <div className="profileFollowing">
-                            <img src="assets/person/1.jpg" alt="" />
+                            <img src={`${PFIM}person/1.jpg`} alt="" />
                             <p className="profileFollowingName">Tam mao</p>
                         </div>
                         <div className="profileFollowing">
-                            <img src="assets/person/1.jpg" alt="" />
+                            <img src={`${PFIM}person/1.jpg`} alt="" />
                             <p className="profileFollowingName">Tam mao</p>
                         </div>
                     </div>

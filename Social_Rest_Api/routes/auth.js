@@ -4,6 +4,7 @@ const bycrypt = require('bcrypt')
 
 router.get('/register', (req, res) => {
     res.send('dang xu ly mongo data')
+    
 })
 //REGISTER
 router.post("/register", async (req,res) => {

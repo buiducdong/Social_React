@@ -11,12 +11,14 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AppsIcon from '@mui/icons-material/Apps';
 import { Avatar } from "@mui/material";
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
+import { Link } from "react-router-dom";
 
 export default function Topbar() {
+    const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <div className="topbarContainer">
             <div className="topbarLeft">
-                <img src="assets/logo-facebook.png" alt="" />
+                <img src={`${PFIM}logo-facebook.png`} alt="" />
                 <span className="search">
                     <SearchIcon className="iconSearch"/>
                     <input
@@ -26,17 +28,21 @@ export default function Topbar() {
                 </span>
             </div>
             <div className="topbarCenter">
-                <HomeIcon className="iconHome iconTopbar"/>
+                <Link to="/" style={{textDecoration:'none'}}>
+                    <HomeIcon className="iconHome iconTopbar"/>
+                </Link>
                 <OndemandVideoIcon className="iconLive iconTopbar"/>
                 <StorefrontIcon className="iconMarket iconTopbar"/>
                 <GroupsIcon className="group iconTopbar"/>
                 <SportsEsportsIcon className="play iconTopbar"/>
             </div>
             <div className="topbarRight">
-                <span className="avatar">
-                    <Avatar className="imgavatar" src="assets/person/man.jpg" alt="" />
-                    <span>Bronze</span>
-                </span>
+                <Link to="/profile/username" style={{textDecoration:'none', color:'black'}}>
+                    <span className="avatar">
+                        <Avatar className="imgavatar" src={`${PFIM}person/man.jpg`} alt="" />
+                        <span>Bronze</span>
+                    </span>
+                </Link>
                 <AppsIcon className="iconTopright"/>
                 <MessageIcon className="iconTopright"/>
                 <CircleNotificationsIcon className="iconTopright"/>

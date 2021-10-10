@@ -1,28 +1,83 @@
 export const Users = [
     {
         id:1,
-        profilePicture: "assets/person/1.jpg",
+        profilePicture: "person/1.jpg",
         username: "Đức Đạt"
     },
     {
         id:2,
-        profilePicture: "assets/person/hinh.jpg",
+        profilePicture: "person/hinh.jpg",
         username: "Đức Tâm"
     },
     {
         id:3,
-        profilePicture: "assets/person/man.jpg",
+        profilePicture: "person/man.jpg",
         username: "Iron Man"
     },
     {
         id:4,
-        profilePicture: "assets/person/girl.jpg",
+        profilePicture: "person/girl.jpg",
         username: "Rose"
     },
     {
         id:5,
-        profilePicture: "assets/person/red.jpg",
+        profilePicture: "person/red.jpg",
         username: "Red"
+    },
+    {
+        id:6,
+        profilePicture: "person/girl.jpg",
+        username: "mao"
+    },
+    {
+        id:7,
+        profilePicture: "person/1.jpg",
+        username: "hihi"
+    },
+    {
+        id:8,
+        profilePicture: "person/man.jpg",
+        username: "abc"
+    },
+    {
+        id:9,
+        profilePicture: "person/red.jpg",
+        username: "Red"
+    },
+    {
+        id:10,
+        profilePicture: "person/girl.jpg",
+        username: "mao"
+    },
+    {
+        id:11,
+        profilePicture: "person/1.jpg",
+        username: "hihi"
+    },
+    {
+        id:12,
+        profilePicture: "person/man.jpg",
+        username: "abc"
+    },
+    {
+        id:13,
+        profilePicture: "person/red.jpg",
+        username: "Red"
+    },
+    {
+        id:14,
+        profilePicture: "person/girl.jpg",
+        username: "mao"
+    },
+    {
+        id:15,
+        profilePicture: "person/1.jpg",
+        username: "hihi"
+    },
+    {
+        id:16,
+        profilePicture: "person/man.jpg",
+        username: "abc"
     },
 ];
 
@@ -30,7 +85,7 @@ export const Posts = [
     {
         id:1,
         desc: "Hôm nay tôi buồn.",
-        photo: "assets/post/slide01.jpg",
+        photo: "post/slide01.jpg",
         date: "3 min",
         userId: 1,
         like: 499,
@@ -39,7 +94,7 @@ export const Posts = [
     {
         id:2,
         desc: "Nắm tay nhau bạn nhé",
-        photo: "assets/post/slide02.jpg",
+        photo: "post/slide02.jpg",
         date: "1 min",
         userId: 2,
         like: 898,
@@ -48,7 +103,7 @@ export const Posts = [
     {
         id:3,
         desc: "yeah Tuyệt vvvvv",
-        photo: "assets/post/slide03.jpg",
+        photo: "post/slide03.jpg",
         date: "59 min",
         userId: 3,
         like: 23,
@@ -57,7 +112,7 @@ export const Posts = [
     {
         id:4,
         desc: "Hôm nay tôi buồn.",
-        photo: "assets/post/slide04.jpg",
+        photo: "post/slide04.jpg",
         date: "3 houres",
         userId: 4,
         like: 34,
@@ -66,10 +121,55 @@ export const Posts = [
     {
         id:5,
         desc: "Hôm nay tôi rất vui",
-        photo: "assets/post/slide05.jpg",
+        photo: "post/slide05.jpg",
         date: "5 min",
         userId: 5,
         like: 3443,
         comment: 424,
+    },
+    {
+        id:6,
+        desc: "heyyyyyy yeahhhhh",
+        photo: "post/slide01.jpg",
+        date: "1 min",
+        userId: 5,
+        like: 1,
+        comment: 3,
+    },
+    {
+        id:7,
+        desc: "Thoi ban oiiii",
+        photo: "post/slide02.jpg",
+        date: "5 min",
+        userId: 1,
+        like: 22,
+        comment: 22,
+    },
+    {
+        id:8,
+        desc: "oiiiiiiiiiiii",
+        photo: "post/slide03.jpg",
+        date: "5 min",
+        userId: 6,
+        like: 11,
+        comment: 11,
+    },
+    {
+        id:9,
+        desc: "Ban la nhatttttt",
+        photo: "post/slide04.jpg",
+        date: "5 min",
+        userId: 7,
+        like: 10,
+        comment: 10,
+    },
+    {
+        id:10,
+        desc: "duoc cua lua",
+        photo: "post/slide05.jpg",
+        date: "5 min",
+        userId: 8,
+        like: 3,
+        comment: 3,
     },
 ]

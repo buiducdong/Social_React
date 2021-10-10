@@ -3,8 +3,18 @@ import Share from "../share/Share"
 import Story from "../story/Story"
 import "./feed.css"
 import { Posts } from "../../myData"
+import { useEffect} from "react"
+import axios from "axios"
 
 export default function Feed({ profile }) {
+
+    useEffect(() => {
+        const fetchPost = async () => {
+            const res = await axios.get('posts/timeline/615dcae57631cf469818bd59');
+            console.log(res);
+        };
+        fetchPost();
+    }, [])
 
     const HomeFeed = () => {
         return (

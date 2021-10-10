@@ -4,14 +4,15 @@ import "./profile.css"
 import Rightbar from "../../components/rightbar/Rightbar"
 
 export default function Profile() {
+    const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <>
             <Topbar />
             <div className="profile">
                 <div className="profileTop">
                     <div className="profileTopHeader">
-                        <img className="profileBackground" src="assets/post/slide01.jpg" alt="" />
-                        <img className="profileAvatar" src="assets/person/1.jpg" alt="" />
+                        <img className="profileBackground" src={`${PFIM}post/slide01.jpg`} alt="" />
+                        <img className="profileAvatar" src={`${PFIM}person/1.jpg`} alt="" />
                         <h2 className="profileTopHeaderName">Duc Dat</h2>
                         <span>Thêm tiểu sử</span>
                     </div>
