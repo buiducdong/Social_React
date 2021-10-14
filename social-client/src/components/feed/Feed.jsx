@@ -1,20 +1,21 @@
+import { useEffect, useState } from "react"
 import Post from "../post/Post"
 import Share from "../share/Share"
 import Story from "../story/Story"
-import "./feed.css"
-import { Posts } from "../../myData"
-import { useEffect} from "react"
 import axios from "axios"
+import "./feed.css"
+export default function Feed({username}) {
 
-export default function Feed({ profile }) {
-
+    const [posts, setPosts] = useState([])
     useEffect(() => {
         const fetchPost = async () => {
-            const res = await axios.get('posts/timeline/615dcae57631cf469818bd59');
-            console.log(res);
+            const res = username 
+            ? await axios.get("/posts/profile/" + username) 
+            : await axios.get('posts/timeline/615dcad47631cf469818bd57');
+            setPosts(res.data);
         };
         fetchPost();
-    }, [])
+    }, [username])
 
     const HomeFeed = () => {
         return (
@@ -22,8 +23,8 @@ export default function Feed({ profile }) {
                 <div className="feedWrapper">
                     <Story />
                     <Share home/>
-                    {Posts.map((p) => (
-                        <Post key={p.id} post={p}/>
+                    {posts.map((p) => (
+                        <Post key={p._id} post={p}/>
                     ))}
                 </div>
             </div>
@@ -33,8 +34,8 @@ export default function Feed({ profile }) {
         return (
             <>
                 <Share />
-                {Posts.map((p) => (
-                    <Post key={p.id} post={p}/>
+                {posts.map((p) => (
+                    <Post key={p._id} post={p}/>
                 ))}
             </>
         )
@@ -42,7 +43,7 @@ export default function Feed({ profile }) {
 
     return (
         <>
-                {profile ? <ProfileFeed /> : <HomeFeed />}
+            {username ? <ProfileFeed /> : <HomeFeed />}
         </>
     )
 }

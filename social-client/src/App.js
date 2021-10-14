@@ -14,14 +14,14 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/profile/:username">
-            <Profile />
-          </Route>
           <Route path="/login">
             <Login />
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/profile/:username">
+            <Profile />
           </Route>
         </Switch>
     </Router>

@@ -1,6 +1,9 @@
 import "./login.css"
 
 export default function Login() {
+    const handleClick = (e) => {
+        e.preventDefault();
+    }
     return (
         <>
             <div className="login">
@@ -10,14 +13,14 @@ export default function Login() {
                         <p>Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống của bạn.</p>
                     </div>
                     <div className="loginRight">
-                        <div className="loginBox">
+                        <form className="loginBox" onSubmit={handleClick}>
                             <input type="text" className="EmailInput" placeholder="Email hoặc số điện thoại" />
                             <input className="passwordInput" type="password" placeholder="Mật khẩu" />
                             <button className="loginBtn">Đăng nhập</button>
                             <p>Quên mật khẩu</p>
                             <hr className="loginHr"/>
                             <button className="registerBtn">Tạo tài khoản mới</button>
-                        </div>
+                        </form>
                     </div> 
                 </div>
             </div>

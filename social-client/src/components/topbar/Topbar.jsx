@@ -28,7 +28,7 @@ export default function Topbar() {
                 </span>
             </div>
             <div className="topbarCenter">
-                <Link to="/" style={{textDecoration:'none'}}>
+                <Link to="/">
                     <HomeIcon className="iconHome iconTopbar"/>
                 </Link>
                 <OndemandVideoIcon className="iconLive iconTopbar"/>
@@ -37,12 +37,10 @@ export default function Topbar() {
                 <SportsEsportsIcon className="play iconTopbar"/>
             </div>
             <div className="topbarRight">
-                <Link to="/profile/username" style={{textDecoration:'none', color:'black'}}>
                     <span className="avatar">
                         <Avatar className="imgavatar" src={`${PFIM}person/man.jpg`} alt="" />
                         <span>Bronze</span>
                     </span>
-                </Link>
                 <AppsIcon className="iconTopright"/>
                 <MessageIcon className="iconTopright"/>
                 <CircleNotificationsIcon className="iconTopright"/>

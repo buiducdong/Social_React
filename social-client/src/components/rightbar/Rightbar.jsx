@@ -3,7 +3,7 @@ import Search from "@mui/icons-material/Search"
 import MoreHoriz from "@mui/icons-material/MoreHoriz"
 import { Users } from "../../myData"
 import UserOnline from "../userOnline/UserOnline"
-export default function RightBar({ profile }) {
+export default function RightBar({ user }) {
     const HomeRightbar = () => {
 
         return(
@@ -26,12 +26,17 @@ export default function RightBar({ profile }) {
     }
 
     const ProfileRightbar = () => {
-        const PFIM = 'http://localhost:3000/assets/';
+        const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
         return(
             <>
+                <div className="introduce">
+                    <h2>Giới thiệu</h2>
+                    <p>Den tu {user.from}</p>
+                    <p>Sống tại {user.city}</p>
+                </div>
                 <div className="introProfile">
                     <div className="profileTitle">
-                        <h3>Bạn bè</h3>
+                        <h2>Bạn bè</h2>
                         <p>Xem tất cả bạn bè</p>
                     </div>
                     <p className="totalFriend">433k người bạn</p>
@@ -67,7 +72,7 @@ export default function RightBar({ profile }) {
     }
     return (
         <div className="rightbar">
-            {profile ? <ProfileRightbar /> : <HomeRightbar />}
+            {user ? <ProfileRightbar /> : <HomeRightbar />}
         </div>
     )
 }

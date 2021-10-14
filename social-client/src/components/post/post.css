@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
 }
-.postTopLeft > img {
+.avatarPost {
     height: 40px;
     width: 40px;
     border-radius: 50%;

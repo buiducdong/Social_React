@@ -1,6 +1,6 @@
 import "./userOnline.css"
 
-export default function UserOnline({user}) {
+export default function UserOnline({ user }) {
     const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <li className="rightbarFriend">
