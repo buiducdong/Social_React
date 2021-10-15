@@ -12,9 +12,13 @@ import AppsIcon from '@mui/icons-material/Apps';
 import { Avatar } from "@mui/material";
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Topbar() {
     const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
+
+    const { user } = useContext(AuthContext)
     return (
         <div className="topbarContainer">
             <div className="topbarLeft">
@@ -37,10 +41,12 @@ export default function Topbar() {
                 <SportsEsportsIcon className="play iconTopbar"/>
             </div>
             <div className="topbarRight">
+                <Link to={`/profile/${user.username}`} style={{textDecoration: "none", color:"black"}}>
                     <span className="avatar">
-                        <Avatar className="imgavatar" src={`${PFIM}person/man.jpg`} alt="" />
+                        <Avatar className="imgavatar" src={user.profilePicture ? PFIM + user.profilePicture : PFIM + "person/noavatar.jpg"} alt="" />
                         <span>Bronze</span>
                     </span>
+                </Link>
                 <AppsIcon className="iconTopright"/>
                 <MessageIcon className="iconTopright"/>
                 <CircleNotificationsIcon className="iconTopright"/>
