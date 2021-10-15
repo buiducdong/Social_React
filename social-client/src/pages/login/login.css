@@ -55,6 +55,9 @@
     border-radius: 5px;
     border: none;
 }
+.loginBtn:disabled {
+    cursor: not-allowed;
+}
 .registerBtn {
     padding: 10px 5px;
     width: 55%;

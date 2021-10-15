@@ -27,10 +27,19 @@ export default function Login() {
                         <form className="loginBox" onSubmit={handleClick}>
                             <input type="email" required className="EmailInput" placeholder="Email hoặc số điện thoại" ref={email}/>
                             <input className="passwordInput" required minLength="6" type="password" placeholder="Mật khẩu" ref={password}/>
-                            <button className="loginBtn" type="submit">{isFetching ? <CircularProgress color="inherit" size="20px"/> : "Đăng nhập"} </button>
+                            <button 
+                                className="loginBtn" 
+                                type="submit"
+                                disabled={isFetching}>
+                                    {isFetching ? <CircularProgress color="inherit" size="20px"/> : "Đăng nhập"}
+                            </button>
                             <p>Quên mật khẩu</p>
                             <hr className="loginHr"/>
-                            <button className="registerBtn">{isFetching ? <CircularProgress color="inherit" size="20px"/> : "Tạo tài khoản mới"}</button>
+                            <button 
+                                className="registerBtn"
+                                disabled={isFetching}>
+                                {isFetching ? <CircularProgress color="inherit" size="20px"/> : "Tạo tài khoản mới"}
+                            </button>
                         </form>
                     </div> 
                 </div>
