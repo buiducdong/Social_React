@@ -1,18 +1,14 @@
 const router = require("express").Router();
 const User = require("../models/User")
-const bycrypt = require('bcrypt')
+const bcrypt = require('bcrypt')
 
-router.get('/register', (req, res) => {
-    res.send('dang xu ly mongo data')
-    
-})
 //REGISTER
 router.post("/register", async (req,res) => {
 
     try {
-        //create password
-        const salt = await bycrypt.genSalt(10);
-        const hashedPassword = await bycrypt.hash(req.body.password, salt)
+        //generate new password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(req.body.password, salt)
         
         //create user
         const newUser = new User({
@@ -21,7 +17,7 @@ router.post("/register", async (req,res) => {
             password: hashedPassword,
         });
         
-        //save user
+        //save user and response
         const user = await newUser.save();
         res.status(200).json(user)
     }catch(err) {
@@ -35,7 +31,7 @@ router.post('/login', async (req, res) => {
         const user = await User.findOne({email: req.body.email});
         !user && res.status(404).json("user not found");
 
-        const validPassword = await bycrypt.compare(req.body.password, user.password);
+        const validPassword = await bcrypt.compare(req.body.password, user.password);
         !validPassword && res.status(400).json("wrong password")
 
         res.status(200).json(user)

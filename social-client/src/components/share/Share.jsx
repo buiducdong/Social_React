@@ -3,13 +3,14 @@ import PermMediaIcon from '@mui/icons-material/PermMedia';
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 
 export default function Share({home}) {
+    const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
 
     const HomeShare = () => {
         return (
             <div className="share">
             <div className="shareWrapper">
                 <div className="shareTop">
-                    <img src="/assets/person/1.jpg" alt="" />
+                    <img src={`${PFIM}person/1.jpg`} alt="" />
                     <input type="text" placeholder="Dat oi, Ban dang nghi gi the ?"/>
                 </div>
                 <hr className="shareHr"/>

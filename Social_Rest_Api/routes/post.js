@@ -6,8 +6,8 @@ const User = require("../models/User");
 router.post("/", async (req, res) => {
     const newPost = new Post(req.body)
     try {
-        const savePost = await newPost.save();
-        res.status(200).json(savePost)
+        const savedPost = await newPost.save();
+        res.status(200).json(savedPost)
     } catch (err) {
         res.status(500).json(err)
     }
@@ -23,7 +23,6 @@ router.put("/:id", async(req, res) => {
         }else{
             res.status(403).json("you can update only your post")
         }
-        
     } catch (error) {
         res.status(500).json(error)
     }
@@ -39,7 +38,6 @@ router.delete("/:id", async(req, res) => {
         }else{
             res.status(403).json("you can delete only your post")
         }
-        
     } catch (error) {
         res.status(500).json(error)
     }

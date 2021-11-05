@@ -7,12 +7,15 @@ import GroupFriend from "../groupFriend/GroupFriend";
 import { Users } from "../../myData"
 
 export default function Sidebar() {
+    
+    const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
+
     return (
         <div className="sidebar">
             <div className="sidebarWrapper">
                 <ul className="sidebarList">
                     <li className="sidebarListItem">
-                        <Avatar className="sidebarAvatar sidebarIcon" src="assets/person/man.jpg" alt="" />
+                        <Avatar className="sidebarAvatar sidebarIcon" src={`${PFIM}person/man.jpg`} alt="" />
                         <span>Bronze</span>
                     </li>
                     <li className="sidebarListItem">

@@ -29,10 +29,9 @@ router.put("/:id", async(req, res) => {
 //delete user
 router.delete("/:id", async(req, res) => {
     if(req.body.userId == req.params.id || req.body.isAdmin) {
-        
         try {
-            const user = await User.findOneAndDelete(req.params.id);
-                res.status(200).json("Account has been deleted")
+            await User.findByIdAndDelete(req.params.id);
+            res.status(200).json("Account has been deleted")
         } catch (error) {
             return res.status(500).json(error)
         }
@@ -46,11 +45,13 @@ router.get("/", async (req, res) => {
     const userId = req.query.userId;
     const username = req.query.username;
     try {
-        const user = userId ? await User.findById(userId) : await User.findOne({ username: username });
-        const {password, updatedAt, ...other} = user._doc
+        const user = userId 
+            ? await User.findById(userId) 
+            : await User.findOne({ username: username });
+        const { password, updatedAt, ...other } = user._doc
         res.status(200).json(other)
     } catch (error) {
-        error.status(500).json(error)
+        res.status(500).json(error)
     }
 })
 
@@ -61,8 +62,8 @@ router.put("/:id/follow", async (req, res) => {
             const user = await User.findById(req.params.id);
             const currentUser = await User.findById(req.body.userId);
             if(!user.followers.includes(req.body.userId)){
-                await user.updateOne({$push:{followers:req.body.userId}});
-                await currentUser.updateOne({$push:{followings:req.params.id}});
+                await user.updateOne({ $push: { followers: req.body.userId } });
+                await currentUser.updateOne({ $push: { followings: req.params.id } });
                 res.status(200).json("user has been followed");
             }else{
                 res.status(403).json("you allready follow this user")
@@ -71,7 +72,7 @@ router.put("/:id/follow", async (req, res) => {
             res.status(500).json(err)
         }
     }else{
-        res.status(403).json("you can follow yourself")
+        res.status(403).json("you cant follow yourself")
     }
 })
 
@@ -92,7 +93,7 @@ router.put("/:id/unfollow", async (req, res) => {
             res.status(500).json(err)
         }
     }else{
-        res.status(403).json("you can unfollow yourself")
+        res.status(403).json("you cant unfollow yourself")
     }
 })
 

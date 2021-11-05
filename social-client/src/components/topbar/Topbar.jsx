@@ -27,7 +27,7 @@ export default function Topbar() {
                     <SearchIcon className="iconSearch"/>
                     <input
                         placeholder="Search…"
-                        inputProps={{ 'aria-label': 'search' }}
+                        // inputProps={{ 'aria-label': 'search' }}
                     />
                 </span>
             </div>
@@ -44,7 +44,7 @@ export default function Topbar() {
                 <Link to={`/profile/${user.username}`} style={{textDecoration: "none", color:"black"}}>
                     <span className="avatar">
                         <Avatar className="imgavatar" src={user.profilePicture ? PFIM + user.profilePicture : PFIM + "person/noavatar.jpg"} alt="" />
-                        <span>Bronze</span>
+                        <span>{user.username}</span>
                     </span>
                 </Link>
                 <AppsIcon className="iconTopright"/>
