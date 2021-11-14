@@ -10,14 +10,14 @@
     align-items: center;
     padding: 10px;
 }
-.shareTop > img {
+.shareTop > img, .post__avatar > img {
     width: 40px;
     height: 40px;
     object-fit: cover;
     border-radius: 50%;
     margin-right: 10px;
 }
-.shareTop > input {
+.shareTop > span {
     outline: none;
     background-color: #f0f2f5;
     border: none;
@@ -48,4 +48,132 @@
 }
 .shareIcon {
     margin-right: 10px;
+}
+
+/*create post */
+
+.create__post{
+    /* display: none; */
+    position: fixed;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0,3s ease-in-out;
+    border-radius: 1rem;
+    width: 35vw;
+    height: 80vh;
+    min-width: 25rem;
+}
+
+.create__post .post__title {
+    position: relative;
+}
+
+.create__post .post__title span{
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    padding: 4px;
+    cursor: pointer;
+}
+
+.create__post .post__title h3{
+    line-height: 4rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.create__post .post__body {
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 4rem);
+    box-sizing: border-box;
+}
+
+.create__post .post__header{
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.create__post .post__image{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.create__post .post__image .post__things input{
+    width: calc(100% - 16px);
+    background-color: transparent;
+    outline: none;
+    padding: 4px;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+.create__post .add-img{
+    background-color: gray;
+    height: 15rem;
+    border-radius: 5px;
+    width: 100%;
+    position: relative;
+}
+
+.shareImg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.shareImg img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.cancelImg {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    padding: 4px;
+    cursor: pointer;
+    background: rgba(243, 241, 241, .8);
+    color: rgb(46, 44, 44);
+    border-radius: 4px;
+}
+
+.create__post .post__image .add-image{
+    cursor: pointer;
+}
+
+.create__post .post__image .add-image h5{
+    line-height: 15rem;
+    align-items: center;
+    text-align: center;
+}
+
+.create__post .post__bottom{
+    margin-top: auto;
+    flex-shrink: 0;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create__post .post__bottom button{
+    width: 100%;
+    background-color: #1877f2;
+    font-size: 1.2rem;
+    outline: none;
+    border-radius: 8px;
+    padding: 4px 0;
+    color: #fff;
+    cursor: pointer;
+    border: none;
 }

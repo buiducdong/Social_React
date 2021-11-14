@@ -16,21 +16,21 @@ export default function Profile() {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(`/users?username=${currentUser.username}`);
+            const res = await axios.get(`/users?username=${username}`);
             setUser(res.data)
         };
         fetchUser();
-    }, [currentUser.username])
+    }, [username])
     return (
         <>
             <Topbar />
             <div className="profile">
                 <div className="profileTop">
                     <div className="profileTopHeader">
-                        <img className="profileBackground" src={user.coverPicture || `${PFIM}post/slide01.jpg`} alt="" />
-                        <img className="profileAvatar" src={user.profilePicture || PFIM+"person/noavatar.jpg"} alt="" />
+                        <img className="profileBackground" src={user.coverPicture || `${PFIM}post/slide01.jpg`} alt="img" />
+                        <img className="profileAvatar" src={user.profilePicture || PFIM+"person/noavatar.jpg"} alt="img" />
                         <h2 className="profileTopHeaderName">{user.username}</h2>
-                        <span>{user.desc || "..."}</span>
+                        <span>{user.desc || "hihi"}</span>
                     </div>
                     <hr />
                     <div className="profileTopContent">
@@ -42,7 +42,7 @@ export default function Profile() {
                             <li>Xem thêm</li>
                         </ul>
                         <ul className="profileTopContentButtom">
-                            <span className="profileAddnew">Thêm vào tin</span>
+                            <span className="profileAddnew">{currentUser.username === username ? 'Thêm vào tin' : 'Them ban be'}</span>
                             <span className="profileEdit">Chỉnh sửa trang cá nhân</span>
                         </ul>
                     </div>
