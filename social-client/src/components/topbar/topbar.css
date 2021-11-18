@@ -96,3 +96,56 @@
 .topbarRight .avatar span {
     margin: 0 8px;
 }
+
+.toggle__select {
+    position: relative;
+}
+
+.toggle__selects {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: 400px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 20px;
+}
+
+.toggle__select-info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.toggle__select-info::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #909296;
+}
+
+.toggle__select-items {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.toggle__select-items li {
+    list-style-type: none;
+    padding: 1rem 0;
+    border-radius: 8px;
+    padding-left: 4px;
+    transition: all .3s ease;
+}
+
+.toggle__select-items li:hover {
+    background-color: #909296;
+    cursor: pointer;
+}

@@ -34,9 +34,9 @@ export default function RightBar({ user }) {
             </span>
             </div>
             <ul className="rightbarFriendList">
-                {Users.map((userr) => (
-                    <UserOnline key={userr.id} user={userr}/>
-                ))}
+              {Users.map((userr) => (
+                  <UserOnline key={userr.id} user={userr}/>
+              ))}
             </ul>
         </>
     )
@@ -59,7 +59,7 @@ const ProfileRightbar = () => {
           <p className="totalFriend">433k người bạn</p>
           <div className="profileListFriend">
             {friends.map((friend, index) => (
-              <Link to={"/profile/"+friend.username} style={{textDecoration: 'none', color: 'black'}}>
+              <Link key={index} to={"/profile/"+friend.username} style={{textDecoration: 'none', color: 'black'}}>
                 <div key={index} className="profileFollowing">
                   <img src={friend.profilePicture ? PFIM+friend.profilePicture : PFIM+"person/noavatar.jpg"} alt="" />
                   <p className="profileFollowingName">{friend.username}</p>
