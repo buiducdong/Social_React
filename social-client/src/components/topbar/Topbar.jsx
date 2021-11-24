@@ -14,12 +14,17 @@ import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { useHistory } from "react-router";
 
 export default function Topbar() {
     const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
 
     const { user } = useContext(AuthContext)
     const [showSetting, setShowSetting] = useState(false)
+    const historyy = useHistory()
+    const logoutBtn = () => {
+        localStorage.removeItem('user')
+    }
     return (
         <div className="topbarContainer">
             <div className="topbarLeft">
@@ -49,27 +54,31 @@ export default function Topbar() {
                     </span>
                 </Link>
                 <AppsIcon className="iconTopright"/>
-                <MessageIcon className="iconTopright"/>
+                <Link to={`/messenger`} style={{textDecoration: "none", color:"black"}}>
+                    <MessageIcon className="iconTopright"/>
+                </Link>
                 <CircleNotificationsIcon className="iconTopright"/>
                 <div className="toggle__select">
                     <ArrowDropDownIcon onClick={() => setShowSetting(!showSetting)} className="iconTopright"/>
                     {
                         showSetting && 
                         <div className="toggle__selects">
-                        <div className="toggle__select-info">
-                            <Avatar className="imgavatar" src={user.profilePicture ? PFIM + user.profilePicture : PFIM + "person/noavatar.jpg"} alt="" />
-                            <div className="toggle__seclect-info__title">
-                                <h2>{user.username}</h2>
-                                <p>xem trang cá nhân của bạn</p>
+                            <div className="toggle__select-info">
+                                <Avatar className="imgavatar" src={user.profilePicture ? PFIM + user.profilePicture : PFIM + "person/noavatar.jpg"} alt="" />
+                                <div className="toggle__seclect-info__title">
+                                    <h2>{user.username}</h2>
+                                    <p>xem trang cá nhân của bạn</p>
+                                </div>
                             </div>
+                            <ul className="toggle__select-items">
+                                <li>Cài đặt và quyền riêng tư</li>
+                                <li>Trợ giúp và hỗ trợ</li>
+                                <li>Màn hình và trợ năng</li>
+                                <Link to={`/login`} style={{textDecoration: "none", color:"black"}}>
+                                    <li onClick={logoutBtn}>Đăng xuất</li>
+                                </Link>
+                            </ul>
                         </div>
-                        <ul className="toggle__select-items">
-                            <li>Cài đặt và quyền riêng tư</li>
-                            <li>Trợ giúp và hỗ trợ</li>
-                            <li>Màn hình và trợ năng</li>
-                            <li>Đăng xuất</li>
-                        </ul>
-                    </div>
                     }
                 </div>
             </div>

@@ -12,6 +12,9 @@ const userRoute = require("./routes/users")
 const authRoute = require("./routes/auth")
 const postRoute = require("./routes/post")
 
+const conversationRouter = require('./routes/conversation')
+const messageRouter = require('./routes/message')
+
 //port
 const port = 8800
 
@@ -51,7 +54,8 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
-
+app.use("/api/conversations", conversationRouter);
+app.use("/api/messages", messageRouter);
 
 app.listen(port, () => {
     console.log("Backend Server is running!")
