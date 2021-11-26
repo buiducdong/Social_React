@@ -19,10 +19,8 @@
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "mongoose": "^6.0.7",
-    "multer": "^1.4.3"
-  },
-  "devDependencies": {
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.12"
+    "multer": "^1.4.3",
+    "nodemon": "^2.0.15"
   }
 }

@@ -16,7 +16,7 @@ const conversationRouter = require('./routes/conversation')
 const messageRouter = require('./routes/message')
 
 //port
-const port = 8800
+const PORT = process.env.PORT || 8800
 
 dotenv.config()
 mongoose.connect(process.env.MONGO_URL, {
@@ -57,6 +57,6 @@ app.use("/api/posts", postRoute);
 app.use("/api/conversations", conversationRouter);
 app.use("/api/messages", messageRouter);
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log("Backend Server is running!")
 })
