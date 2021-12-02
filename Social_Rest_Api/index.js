@@ -6,6 +6,15 @@ const helmet = require("helmet")
 const morgan = require("morgan")
 const multer = require("multer")
 const path = require("path")
+var bodyParser = require('body-parser') 
+var cors = require('cors')
+ 
+app.use(cors())
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
 
 //router
 const userRoute = require("./routes/users")

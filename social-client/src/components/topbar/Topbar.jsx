@@ -21,9 +21,10 @@ export default function Topbar() {
 
     const { user } = useContext(AuthContext)
     const [showSetting, setShowSetting] = useState(false)
-    const historyy = useHistory()
+    const history = useHistory()
     const logoutBtn = () => {
-        localStorage.removeItem('user')
+        localStorage.setItem("user", null);
+        history.push("/login")
     }
     return (
         <div className="topbarContainer">

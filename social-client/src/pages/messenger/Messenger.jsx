@@ -5,6 +5,7 @@ import Topbar from '../../components/topbar/Topbar'
 import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
 import './messenger.css'
+import {io} from 'socket.io-client'
 export default function Messenger() {
 
   const { user } = useContext(AuthContext)
@@ -13,6 +14,14 @@ export default function Messenger() {
   const [messages, setMessages] = useState([])
   const [newMessage, setNewMessage] = useState('')
   const scrollRef = useRef()
+  const socket = useRef(io("ws://localhost:8900"))
+
+  useEffect(() => {
+    socket.current.emit("addUser", user._id)
+    socket.current.on("getUsers", users=>{
+      console.log(users)
+    })
+  }, [user])
 
   useEffect(() => {
     const getConversations = async () => {

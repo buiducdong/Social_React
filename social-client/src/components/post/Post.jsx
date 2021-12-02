@@ -14,6 +14,7 @@ export default function Post({post}) {
 		const [isLiked, setIsLiked] = useState(false)
 		const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
 		const {user: currentUser} = useContext(AuthContext)
+		const [showBoxEvent, setShowBoxEvent] = useState(false)
 
 		useEffect(() => {
 				setIsLiked(post.likes.includes(currentUser._id))
@@ -37,6 +38,15 @@ export default function Post({post}) {
 				};
 				fetchUser();
 		}, [post.userId])
+
+		const deletePost = () => {
+			try {
+				axios.delete("/posts/"+post._id, { data: { userId:currentUser._id }})
+				window.location.reload()
+		} catch (error) {
+		}
+		}
+		
 		return (
 				<div className="post">
 						<div className="postTop">
@@ -52,7 +62,24 @@ export default function Post({post}) {
 										</span>
 								</div>  
 								<div className="postTopRight">
-										<MoreHorizIcon className="postTopIcon"/>
+										<MoreHorizIcon className="postTopIcon" onClick={() => setShowBoxEvent(!showBoxEvent)}/>
+										{
+											showBoxEvent &&
+											<div className="postTopRight__event">
+												{
+													post.userId === currentUser._id ?
+													<>
+														<div className="postTopRight__event__delete" onClick={deletePost}>Xoa</div>
+														<div className="postTopRight__event__edit">Sua</div>
+													</> :
+
+													<>
+														<div className="postTopRight__event__delete">ok</div>
+														<div className="postTopRight__event__edit">eko</div>
+													</>
+												}
+											</div>
+										}
 								</div>
 						</div>
 						<div className="postCenter">
