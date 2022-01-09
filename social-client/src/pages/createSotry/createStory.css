@@ -1,0 +1,58 @@
+.create {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.sidebar {
+  width: 100px;
+}
+
+.container {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container p {
+  margin-top: 80%;
+  font-weight: 500;
+}
+
+.add__img-story {
+  display: block;
+  height: 300px;
+  width: 200px;
+  background: rgb(63, 158, 221);
+  color: white;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.add__desc-story {
+  display: block;
+  height: 300px;
+  width: 200px;
+  background: rgb(63, 158, 221);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.previewImg {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

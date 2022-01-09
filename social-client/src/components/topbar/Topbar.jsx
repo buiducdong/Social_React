@@ -19,12 +19,13 @@ import { useHistory } from "react-router";
 export default function Topbar() {
     const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
 
-    const { user } = useContext(AuthContext)
+    const { user, dispatch } = useContext(AuthContext)
     const [showSetting, setShowSetting] = useState(false)
     const history = useHistory()
     const logoutBtn = () => {
-        localStorage.setItem("user", null);
-        history.push("/login")
+        localStorage.removeItem('user')
+        dispatch({type: 'LOGOUT'})
+        return history.push('/login')
     }
     return (
         <div className="topbarContainer">
@@ -34,7 +35,6 @@ export default function Topbar() {
                     <SearchIcon className="iconSearch"/>
                     <input
                         placeholder="Search…"
-                        // inputProps={{ 'aria-label': 'search' }}
                     />
                 </span>
             </div>

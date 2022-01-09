@@ -7,6 +7,7 @@ import axios from "axios";
 import {format} from "timeago.js";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import Comment from '../comment/Comment';
 
 export default function Post({post}) {
 		const [like, setLike] = useState(post.likes.length)
@@ -15,6 +16,21 @@ export default function Post({post}) {
 		const PFIM = process.env.REACT_APP_PUBLIC_FOLDER;
 		const {user: currentUser} = useContext(AuthContext)
 		const [showBoxEvent, setShowBoxEvent] = useState(false)
+		const [showInputUser, setShowInputUser] = useState(false)
+
+		const [comment, setComment] = useState([])
+
+		const PF = process.env.REACT_APP_PUBLIC_FOLDER
+  const [newComment, setNewComment] = useState('')
+
+
+		useEffect(() => {
+			const fetchPost = async () => {
+					const res = await axios.get('/comments/'+post._id);
+					setComment(res.data);
+			};
+			fetchPost();
+	}, [post._id])
 
 		useEffect(() => {
 				setIsLiked(post.likes.includes(currentUser._id))
@@ -45,6 +61,26 @@ export default function Post({post}) {
 				window.location.reload()
 		} catch (error) {
 		}
+		}
+
+		const handleShowComment = () => {
+			setShowInputUser(true)
+		}
+
+		const handleSubmit = async (e) => {
+			e.preventDefault()
+			const commentt = {
+				sender: currentUser._id,
+				text: newComment,
+				postId: post._id
+			}
+			try {
+				const res = await axios.post('/comments', commentt)
+				setComment([...comment, res.data])
+				setNewComment('')
+			} catch (error) {
+				console.log(error)
+			}
 		}
 		
 		return (
@@ -95,20 +131,20 @@ export default function Post({post}) {
 										<span className="postIcons">
 												<img src={`${PFIM}like.jfif`} alt="" />
 												<img src={`${PFIM}heart.png`}  alt="" />
-												<span className="countLike">{like}</span>
+												<span className="countLike">{isLiked ? `bạn và ${like - 1} người khác` : like}</span>
 										</span>
 										<span className="countComments">
-												<span className="countComment">{post.comment} lượt bình luận</span>
+												<span className="countComment">{comment.length} lượt bình luận</span>
 												<span className="countShare">505k luot chia se</span>
 										</span>
 								</div>
 								<hr className="postBottmHr"/>
 								<div className="postBottomEvent">
-										<div className="postBottomLike postBottmClick" onClick={likeHander}>
+										<div className={isLiked ? 'liked postBottmClick' : "postBottomLike postBottmClick"} onClick={likeHander}>
 												<ThumbUpAltIcon className='postBtnIcon'/>
 												<span>Thich</span>
 										</div>
-										<span className="postBottomComment postBottmClick">
+										<span onClick={handleShowComment} className="postBottomComment postBottmClick">
 												<ChatBubbleOutlineIcon className='postBtnIcon'/>
 												<span>Binh luan</span>
 										</span>
@@ -117,6 +153,21 @@ export default function Post({post}) {
 												<span>Chia se</span>
 										</span>
 								</div>
+								{
+									showInputUser &&
+										<>
+											<Comment comment = {comment} post = {post}/>
+											<div className='input__user'>
+												<img className='input__user__avatar' src={currentUser.profilePicture ? PF + currentUser.profilePicture : PF + 'person/noavatar.jpg'} alt="sfs" />
+												<input 
+													className='commentInput'
+													onChange={(e) => setNewComment(e.target.value)}
+													value={newComment}
+													placeholder='Viết bình luận...'/>
+													<button onClick={handleSubmit}>Gui</button>
+											</div>
+										</>
+								}
 						</div>
 				</div>
 		)

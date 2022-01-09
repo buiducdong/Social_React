@@ -2,7 +2,7 @@
 
 }
 .profileTop {
-    height: 500px;
+    height: 550px;
     padding:0 300px;
 }
 .profileBottom {
@@ -41,9 +41,10 @@
     position: absolute;
     width: 150px;
     height: 150px;
+    left: 30px;
     border-radius: 50%;
     object-fit: cover;
-    bottom: 60px;
+    bottom: 0px;
 }
 .profileTopHeaderName {
     font-size: 30px;
@@ -52,9 +53,9 @@
 .profileTopContent {
     display: flex;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 20px;
     position: sticky;
-    top: 56px;
+    margin-top: auto;
 }
 .profileTopContentSelect {
     flex: 1;

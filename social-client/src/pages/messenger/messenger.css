@@ -5,7 +5,7 @@
 }
 
 .chatBox, .chatMenu, .chatOnline{
-  padding: 2rem;
+  padding: 4rem 0;
 }
 
 .chatMenu{
@@ -33,6 +33,20 @@
 
 .chatBox{
   flex: 2;
+}
+
+.chatBox__header {
+  border: 1px solid rgb(165, 164, 164);
+  display: flex;
+  padding: 10px;
+}
+
+.receiverUserImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
 }
 
 .chatBox__top {

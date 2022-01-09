@@ -23,7 +23,7 @@ function Conversation({conversation, currentUser}) {
 
   return (
     <div className='conversation'>
-      <img className='conversation__image' src={user?.profilePicture ? user.profilePicture : PF + 'person/noavatar.jpg'} alt="" />
+      <img className='conversation__image' src={user?.profilePicture ?PF+ user.profilePicture : PF + 'person/noavatar.jpg'} alt="" />
       <h3 className='conversation__name'>{user?.username}</h3>
     </div>
   )

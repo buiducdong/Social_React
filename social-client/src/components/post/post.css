@@ -94,6 +94,9 @@
 .postBottomLike:hover {
     background-color: #e4e6eb;
 }
+.liked {
+    color: #0571ed;
+}
 .countComment {
     margin-right: 10px;
 }

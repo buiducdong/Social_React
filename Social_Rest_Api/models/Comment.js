@@ -2,7 +2,7 @@ const mongosse = require('mongoose')
 
 const CommentSchema = new mongosse.Schema(
   {
-    PostId: {
+    postId: {
       type: String,
     },
     sender: {

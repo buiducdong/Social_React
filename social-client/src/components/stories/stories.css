@@ -1,0 +1,33 @@
+.stories {
+  height: 200px;
+  margin: 20px 0;
+  display: flex;
+}
+
+.card {
+  height: 200px;
+  width: 110px;
+  border-radius: 10px;
+  margin-right: 10px;
+  position: relative;
+  background: white;
+  cursor: pointer;
+}
+
+.card__avatar {
+  width: 100%;
+  height: 80%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.add__story {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: solid 2px white;
+  color: blue;
+  size: large;
+}
